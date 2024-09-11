@@ -1,0 +1,7 @@
+* Steps
+- npx create-next-app@latest
+  + No TypeScript, Yes ESLint, Yes Tailwind, Yes src, Yes App Router, No customize default import alias
+- npm install -D autoprefixer @headlessui/react @heroicons/react @tailwindcss/typography @headlessui/tailwindcss
+- npm install -D prettier prettier-plugin-tailwindcss
+- npm install @next/mdx @mdx-js/loader @mdx-js/react @types/mdx mdx-annotations
+- //npm install @sindresorhus/slugify

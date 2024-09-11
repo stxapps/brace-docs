@@ -1,0 +1,14 @@
+{
+  "exclude": [".next", "out"],
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "target": "esnext",
+    "module": "nodenext",
+    "jsx": "preserve",
+    "noEmit": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
