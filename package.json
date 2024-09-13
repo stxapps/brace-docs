@@ -1,0 +1,53 @@
+{
+  "name": "brace-docs",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build-search-data": "node bin/build-search-data.js",
+    "dev": "next dev --experimental-https --hostname 0.0.0.0",
+    "build": "npm run build-search-data && next build",
+    "start": "next start",
+    "lint": "next lint --fix"
+  },
+  "dependencies": {
+    "@algolia/autocomplete-core": "^1.17.4",
+    "@mdx-js/loader": "^3.0.1",
+    "@mdx-js/react": "^3.0.1",
+    "@next/mdx": "^14.2.10",
+    "@sindresorhus/slugify": "^2.2.1",
+    "acorn": "^8.12.1",
+    "clsx": "^2.1.1",
+    "fast-glob": "^3.3.2",
+    "flexsearch": "^0.7.43",
+    "mdast-util-to-string": "^4.0.0",
+    "mdx-annotations": "^0.1.4",
+    "next": "14.2.9",
+    "next-themes": "^0.3.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-highlight-words": "^0.20.0",
+    "remark": "^15.0.1",
+    "remark-gfm": "^4.0.0",
+    "remark-mdx": "^3.0.1",
+    "unist-util-filter": "^5.0.1",
+    "unist-util-visit": "^5.0.0"
+  },
+  "devDependencies": {
+    "@headlessui/react": "^2.1.6",
+    "@headlessui/tailwindcss": "^0.2.1",
+    "@heroicons/react": "^2.1.5",
+    "@stylistic/eslint-plugin": "^2.8.0",
+    "@tailwindcss/typography": "^0.5.15",
+    "@types/mdx": "^2.0.13",
+    "@types/node": "^22.5.4",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.9",
+    "eslint-plugin-tailwindcss": "^3.17.4",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1"
+  }
+}

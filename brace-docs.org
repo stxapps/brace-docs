@@ -1,0 +1,17 @@
+* Installation
+- npx create-next-app@latest
+  + No TypeScript, Yes ESLint, Yes Tailwind, Yes src, Yes App Router, No customize default import alias
+- npm install -D autoprefixer @headlessui/react @heroicons/react @tailwindcss/typography @headlessui/tailwindcss
+- npm install next-themes
+- npm install @next/mdx @mdx-js/loader @mdx-js/react mdx-annotations
+- npm install -D @types/node @types/react @types/react-dom @types/mdx @stylistic/eslint-plugin eslint-plugin-tailwindcss
+- npm install clsx @sindresorhus/slugify fast-glob
+- npm install flexsearch @algolia/autocomplete-core react-highlight-words
+- npm install remark remark-gfm remark-mdx unist-util-visit unist-util-filter mdast-util-to-string acorn
+- // framer-motion shiki
+- // sharp
+- // if big, ignore changes to searchData, no need to git commit
+* Add a new page
+- New folder with name as url path, new page.mdx inside
+- Add to pageInfos and update sectionInfos
+- Update searchData
