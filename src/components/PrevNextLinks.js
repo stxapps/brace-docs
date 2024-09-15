@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 
-import { pageInfos } from '@/infos';
+import { navIndexInfo, navMenuInfos } from '@/infos';
 
 function ArrowIcon(props) {
   return (
@@ -13,27 +13,22 @@ function ArrowIcon(props) {
   );
 }
 
-function PageLink({ title, href, dir = 'next', ...props }) {
+function PrevNextLink({ name, href, dir = 'next', ...props }) {
   return (
     <div {...props}>
       <dt className="font-display text-sm font-medium text-slate-900 dark:text-white">
         {dir === 'next' ? 'Next' : 'Previous'}
       </dt>
       <dd className="mt-1">
-        <Link
-          href={href}
-          className={clsx(
-            'flex items-center gap-x-1 text-base font-semibold text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300',
-            dir === 'previous' && 'flex-row-reverse',
-          )}
-        >
-          {title}
-          <ArrowIcon
-            className={clsx(
-              'size-4 flex-none fill-current',
-              dir === 'previous' && '-scale-x-100',
-            )}
-          />
+        <Link href={href} className={clsx(
+          'flex items-center gap-x-1 text-base font-semibold text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300',
+          dir === 'previous' && 'flex-row-reverse',
+        )}>
+          {name}
+          <ArrowIcon className={clsx(
+            'size-4 flex-none fill-current',
+            dir === 'previous' && '-scale-x-100',
+          )} />
         </Link>
       </dd>
     </div>
@@ -42,16 +37,18 @@ function PageLink({ title, href, dir = 'next', ...props }) {
 
 export function PrevNextLinks() {
   const pathname = usePathname();
-  const pageIndex = pageInfos.findIndex((pageInfo) => pageInfo.href === pathname);
-  const prevPageInfo = pageIndex > -1 ? pageInfos[pageIndex - 1] : null;
-  const nextPageInfo = pageIndex > -1 ? pageInfos[pageIndex + 1] : null;
 
-  if (!prevPageInfo && !nextPageInfo) return null;
+  const infos = [navIndexInfo, ...navMenuInfos];
+  const infoIndex = infos.findIndex((info) => info.href === pathname);
+  const prevInfo = infoIndex > -1 ? infos[infoIndex - 1] : null;
+  const nextInfo = infoIndex > -1 ? infos[infoIndex + 1] : null;
+
+  if (!prevInfo && !nextInfo) return null;
 
   return (
     <dl className="mt-12 flex border-t border-slate-200 pt-6 dark:border-slate-800">
-      {prevPageInfo && <PageLink dir="previous" {...prevPageInfo} />}
-      {nextPageInfo && <PageLink className="ml-auto text-right" {...nextPageInfo} />}
+      {prevInfo && <PrevNextLink dir="previous" {...prevInfo} />}
+      {nextInfo && <PrevNextLink className="ml-auto text-right" {...nextInfo} />}
     </dl>
   );
 }

@@ -39,7 +39,7 @@ function getSections(node) {
 
 function rehypeAddExportedSections() {
   return (tree) => {
-    for (let node of tree.children) {
+    for (const node of tree.children) {
       if (
         node.type === 'mdxjsEsm' &&
         new RegExp(`export\\s+const\\s+sections\\s*=`).test(node.value)

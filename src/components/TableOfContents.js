@@ -8,6 +8,17 @@ function isEmpty(sections) {
   return true;
 }
 
+function getIds(sections) {
+  const ids = [];
+  if (Array.isArray(sections)) {
+    for (const section of sections) {
+      ids.push(section.id);
+      ids.push(...getIds(section.children));
+    }
+  }
+  return ids;
+}
+
 function isActive(currentSection, section) {
   if (section.id === currentSection) return true;
   if (!section.children) return false;
@@ -23,8 +34,7 @@ export function TableOfContents({ sections }) {
   useEffect(() => {
     if (isEmpty(sections)) return;
 
-    const headings = sections
-      .flatMap((node) => [node.id, ...node.children.map((child) => child.id)])
+    const headings = getIds(sections)
       .map((id) => {
         const el = document.getElementById(id);
         if (!el) return null;
@@ -79,7 +89,7 @@ export function TableOfContents({ sections }) {
                     {section.title}
                   </Link>
                 </h3>
-                {section.children.length > 0 && (
+                {!isEmpty(section.children) && (
                   <ol role="list" className="mt-2 space-y-3 pl-5 text-slate-500 dark:text-slate-400">
                     {section.children.map((subSection) => (
                       <li key={subSection.id}>

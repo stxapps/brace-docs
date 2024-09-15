@@ -1,16 +1,30 @@
-const SN_FS = 'Features';
-const SN_CRS = 'Comparisons';
-const SN_101 = 'Brace.to 101';
+const GRP_FS = 'Features';
+const GRP_CRS = 'Comparisons';
+const GRP_101 = 'Brace.to 101';
+const GRP_MISC = 'Misc.';
 
-export const sectionInfos = [
-  { section: SN_FS }, { section: SN_CRS }, { section: SN_101 },
+export const navGrpInfos = [
+  { grp: GRP_FS }, { grp: GRP_CRS }, { grp: GRP_101 }, { grp: GRP_MISC },
 ];
 
-export const pageInfos = [
-  { title: 'Save a link', href: '/save-a-link', section: SN_FS },
-  { title: 'Bulk edit', href: '/bulk-edit', section: SN_FS },
-  { title: 'vs. Pocket', href: '/vs-pocket', section: SN_CRS },
-  { title: 'vs. Raindrop', href: '/vs-raindrop', section: SN_CRS },
-  { title: 'Bookmark manager', href: '/bookmark-manager', section: SN_101 },
-  { title: 'Read later app', href: '/read-later-app', section: SN_101 },
+export const navIndexInfo = { slug: 'index', name: 'Documentation', href: '/' };
+
+const cnmi = (slug, name, grp, href = '') => {
+  return { slug, name, grp, href };
+};
+const _navMenuInfos = [
+  cnmi('account', 'Account', GRP_FS),
+  cnmi('encryption', 'E2E Encryption', GRP_FS),
+  cnmi('save-a-link', 'Save a link', GRP_FS),
+  cnmi('organize-links', 'Organize links', GRP_FS),
+  cnmi('vs-pocket', 'vs.Pocket', GRP_CRS),
+  cnmi('vs-raindrop', 'vs.Raindrop', GRP_CRS),
+  cnmi('bookmark-manager-101', 'Bookmark manager', GRP_101),
+  cnmi('read-later-app-101', 'Read later app', GRP_101),
+  cnmi('faqs', 'FAQs', GRP_MISC),
+  cnmi('about', 'About', GRP_MISC),
 ];
+for (const info of _navMenuInfos) {
+  if (info.href.length === 0) info.href = '/' + info.slug;
+}
+export const navMenuInfos = _navMenuInfos;

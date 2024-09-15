@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import clsx from 'clsx';
 
-import { Main } from '@/components/Main';
-
 function InfoIcon(props) {
   return (
     <svg viewBox="0 0 16 16" aria-hidden="true" {...props}>
@@ -76,13 +74,7 @@ function Property({ name, children, type }) {
   );
 }
 
-function wrapper({ children, ...props }) {
-  const { title, sections } = props;
-
-  return <Main title={title} sections={sections}>{children}</Main>;
-}
-
-const moreComponents = { a: Link, Note, Row, Col, Properties, Property, wrapper };
+const moreComponents = { a: Link, Note, Row, Col, Properties, Property };
 
 export function useMDXComponents(components) {
   return { ...components, ...moreComponents };

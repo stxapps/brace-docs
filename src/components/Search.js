@@ -8,7 +8,7 @@ import { createAutocomplete } from '@algolia/autocomplete-core';
 import Highlighter from 'react-highlight-words';
 import clsx from 'clsx';
 
-import { pageInfos } from '@/infos';
+import { navMenuInfos } from '@/infos';
 import { search } from '@/utils/search';
 
 function SearchIcon(props) {
@@ -94,8 +94,8 @@ function HighlightQuery({ text, query }) {
 function SearchResult({ result, autocomplete, collection, query }) {
   const id = useId();
 
-  const sectionTitle = pageInfos.find((pageInfo) =>
-    pageInfo.href === result.url.split('#')[0]
+  const sectionTitle = navMenuInfos.find((info) =>
+    info.href === result.url.split('#')[0]
   )?.name;
   const hierarchy = [sectionTitle, result.pageTitle].filter(
     (x) => typeof x === 'string',
