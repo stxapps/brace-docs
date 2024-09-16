@@ -5,7 +5,7 @@ import { navMenuInfos } from '@/infos';
 
 function getMenuGrp(navMenuInfos, pathname) {
   for (const info of navMenuInfos) {
-    if (info.href === pathname) return info.grp;
+    if (info.path === pathname) return info.grp;
   }
 
   return null;

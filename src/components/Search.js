@@ -95,7 +95,7 @@ function SearchResult({ result, autocomplete, collection, query }) {
   const id = useId();
 
   const sectionTitle = navMenuInfos.find((info) =>
-    info.href === result.url.split('#')[0]
+    info.path === result.url.split('#')[0]
   )?.name;
   const hierarchy = [sectionTitle, result.pageTitle].filter(
     (x) => typeof x === 'string',

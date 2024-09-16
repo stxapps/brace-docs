@@ -13,14 +13,14 @@ function ArrowIcon(props) {
   );
 }
 
-function PrevNextLink({ name, href, dir = 'next', ...props }) {
+function PrevNextLink({ name, path, dir = 'next', ...props }) {
   return (
     <div {...props}>
       <dt className="font-display text-sm font-medium text-slate-900 dark:text-white">
         {dir === 'next' ? 'Next' : 'Previous'}
       </dt>
       <dd className="mt-1">
-        <Link href={href} className={clsx(
+        <Link href={path} className={clsx(
           'flex items-center gap-x-1 text-base font-semibold text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300',
           dir === 'previous' && 'flex-row-reverse',
         )}>
@@ -39,7 +39,7 @@ export function PrevNextLinks() {
   const pathname = usePathname();
 
   const infos = [navIndexInfo, ...navMenuInfos];
-  const infoIndex = infos.findIndex((info) => info.href === pathname);
+  const infoIndex = infos.findIndex((info) => info.path === pathname);
   const prevInfo = infoIndex > -1 ? infos[infoIndex - 1] : null;
   const nextInfo = infoIndex > -1 ? infos[infoIndex + 1] : null;
 
