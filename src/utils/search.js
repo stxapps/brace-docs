@@ -1,43 +1,45 @@
 import FlexSearch from 'flexsearch';
 
 import { searchData } from '@/searchData';
+import { isObject } from '@/utils';
 
 const sectionIndex = new FlexSearch.Document({
   tokenize: 'full',
   document: {
-    id: 'url',
-    index: 'content',
-    store: ['title', 'pageTitle'],
+    id: 'path',
+    index: ['heading', 'contents'],
+    store: ['heading'],
   },
-  context: {
-    resolution: 9,
-    depth: 2,
-    bidirectional: true,
-  },
+  context: { resolution: 1, depth: 1, bidirectional: true },
 });
 
-for (const { url, sections } of searchData) {
-  for (const [title, hash, content] of sections) {
-    sectionIndex.add({
-      url: url + (hash ? '#' + hash : ''),
-      title,
-      content: [title, ...content].join('\\n'),
-      pageTitle: hash ? sections[0][0] : undefined,
-    });
+for (const { path, title, sections } of searchData) {
+  for (let i = 0; i < sections.length; i++) {
+    const [heading, hash, contents] = sections[i];
+
+    if (i === 0 && title.length > 0) {
+      if (heading.length > 0) {
+        sectionIndex.add({ path, heading: title, contents: [] });
+        sectionIndex.add({ path: path + '#' + hash, heading, contents });
+      } else {
+        sectionIndex.add({ path: path, heading: title, contents });
+      }
+      continue;
+    }
+
+    sectionIndex.add({ path: path + '#' + hash, heading, contents });
   }
 }
 
 export function search(query, options = {}) {
-  const result = sectionIndex.search(query, {
-    ...options,
-    enrich: true,
-  });
-  if (result.length === 0) {
-    return [];
+  const result = sectionIndex.search(query, { ...options, enrich: true });
+
+  let items = [];
+  if (Array.isArray(result) && isObject(result[0]) && Array.isArray(result[0].result)) {
+    items = result[0].result;
   }
-  return result[0].result.map((item) => ({
-    url: item.id,
-    title: item.doc.title,
-    pageTitle: item.doc.pageTitle,
-  }));
+
+  return items.map((item) => {
+    return { path: item.id, heading: item.doc.heading };
+  });
 }

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import clsx from 'clsx';
 
 function InfoIcon(props) {
@@ -74,7 +75,7 @@ function Property({ name, children, type }) {
   );
 }
 
-const moreComponents = { a: Link, Note, Row, Col, Properties, Property };
+const moreComponents = { a: Link, Image, Note, Row, Col, Properties, Property };
 
 export function useMDXComponents(components) {
   return { ...components, ...moreComponents };

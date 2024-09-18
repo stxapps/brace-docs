@@ -8,8 +8,8 @@ import { createAutocomplete } from '@algolia/autocomplete-core';
 import Highlighter from 'react-highlight-words';
 import clsx from 'clsx';
 
-import { navMenuInfos } from '@/infos';
-import { search } from '@/utils/search';
+import { navIndexInfo, navMenuInfos } from '@/infos';
+import { isString } from '@/utils';
 
 function SearchIcon(props) {
   return (
@@ -39,7 +39,9 @@ function LoadingIcon(props) {
 function useAutocomplete({ close }) {
   const id = useId();
   const router = useRouter();
-  const [autocompleteState, setAutocompleteState] = useState({});
+  const [autocompleteState, setAutocompleteState] = useState({
+    isOpen: false, status: null, query: '', collections: [],
+  });
 
   function navigate({ itemUrl }) {
     if (!itemUrl) return;
@@ -63,18 +65,17 @@ function useAutocomplete({ close }) {
     shouldPanelOpen({ state }) {
       return state.query !== '';
     },
-    navigator: {
-      navigate,
-    },
-    getSources({ query }) {
+    navigator: { navigate },
+    getSources() {
       return [
         {
           sourceId: 'documentation',
-          getItems() {
+          async getItems({ query }) {
+            const search = (await import('@/utils/search')).search;
             return search(query, { limit: 5 });
           },
           getItemUrl({ item }) {
-            return item.url;
+            return /** @type string */(item.path);
           },
           onSelect: navigate,
         },
@@ -91,27 +92,21 @@ function HighlightQuery({ text, query }) {
   );
 }
 
-function SearchResult({ result, autocomplete, collection, query }) {
+function SearchResult({ result, query, itemProps }) {
   const id = useId();
-
-  const sectionTitle = navMenuInfos.find((info) =>
-    info.path === result.url.split('#')[0]
-  )?.name;
-  const hierarchy = [sectionTitle, result.pageTitle].filter(
-    (x) => typeof x === 'string',
-  );
+  const info = [navIndexInfo, ...navMenuInfos].find((info) => {
+    return info.path === result.path?.split('#')[0];
+  });
+  const hierarchy = [info?.grp, info?.name].filter((x) => isString(x));
 
   return (
     <li
       className="group block cursor-default rounded-lg px-3 py-2 aria-selected:bg-slate-100 dark:aria-selected:bg-slate-700/30"
       aria-labelledby={`${id}-hierarchy ${id}-title`}
-      {...autocomplete.getItemProps({
-        item: result,
-        source: collection.source,
-      })}
+      {...itemProps}
     >
       <div id={`${id}-title`} aria-hidden="true" className="text-sm text-slate-700 group-aria-selected:text-sky-600 dark:text-slate-300 dark:group-aria-selected:text-sky-400">
-        <HighlightQuery text={result.title} query={query} />
+        <HighlightQuery text={result.heading} query={query} />
       </div>
       {hierarchy.length > 0 && (
         <div id={`${id}-hierarchy`} aria-hidden="true" className="mt-0.5 truncate whitespace-nowrap text-xs text-slate-500 dark:text-slate-400">
@@ -127,8 +122,14 @@ function SearchResult({ result, autocomplete, collection, query }) {
   );
 }
 
-function SearchResults({ autocomplete, query, collection }) {
-  if (collection.items.length === 0) {
+function SearchResults({ autocomplete, autocompleteState }) {
+  const { query, collections } = autocompleteState;
+
+  let source = null, items = [];
+  if (Array.isArray(collections) && Array.isArray(collections[0]?.items)) {
+    [source, items] = [collections[0].source, collections[0].items];
+  }
+  if (items.length === 0) {
     return (
       <p className="px-4 py-8 text-center text-sm text-slate-700 dark:text-slate-400">
         No results for &ldquo;
@@ -142,9 +143,10 @@ function SearchResults({ autocomplete, query, collection }) {
 
   return (
     <ul {...autocomplete.getListProps()}>
-      {collection.items.map((result) => (
-        <SearchResult key={result.url} result={result} autocomplete={autocomplete} collection={collection} query={query} />
-      ))}
+      {items.map((result) => {
+        const itemProps = autocomplete.getItemProps({ item: result, source });
+        return <SearchResult key={result.path} result={result} query={query} itemProps={itemProps} />;
+      })}
     </ul>
   );
 }
@@ -245,11 +247,14 @@ function SearchDialog(props) {
         <div className="fixed inset-0 overflow-y-auto p-4 sm:px-6 sm:py-20 md:py-32 lg:px-8 lg:py-[15vh]">
           <DialogPanel className="mx-auto transform-gpu overflow-hidden rounded-xl bg-white shadow-xl sm:max-w-xl dark:bg-slate-800 dark:ring-1 dark:ring-slate-700">
             <div {...autocomplete.getRootProps({})}>
+              {/** @ts-expect-error */}
               <form ref={formRef} {...autocomplete.getFormProps({ inputElement: inputRef.current })}>
+                {/** @ts-expect-error */}
                 <SearchInput ref={inputRef} autocomplete={autocomplete} autocompleteState={autocompleteState} onClose={() => setOpen(false)} />
+                {/** @ts-expect-error */}
                 <div ref={panelRef} className="border-t border-slate-200 bg-white px-2 py-3 empty:hidden dark:border-slate-400/10 dark:bg-slate-800" {...autocomplete.getPanelProps({})} >
                   {autocompleteState.isOpen && (
-                    <SearchResults autocomplete={autocomplete} query={autocompleteState.query} collection={autocompleteState.collections[0]} />
+                    <SearchResults autocomplete={autocomplete} autocompleteState={autocompleteState} />
                   )}
                 </div>
               </form>
