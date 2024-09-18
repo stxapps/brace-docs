@@ -9,9 +9,10 @@
 - npm install remark remark-gfm remark-mdx unist-util-visit unist-util-filter mdast-util-to-string acorn
 - npm install specifier-resolution-node
 - npm install -D @types/node @types/react @types/react-dom @types/mdx @types/react-highlight-words @stylistic/eslint-plugin eslint-plugin-tailwindcss
-- // framer-motion shiki sharp
+- npm install next-image-export-optimizer
+- // framer-motion shiki
 - // if big, ignore changes to searchData, no need to git commit
 * Add a new page
-- New folder with name as url path, new page.mdx inside
-- Add to pageInfos and update sectionInfos
+- New mdx file with name as url path (slug)
+- Add to infos
 - Update searchData

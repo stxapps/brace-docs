@@ -6,7 +6,7 @@
   "scripts": {
     "build-search-data": "node --import=specifier-resolution-node/register src/build-search-data.js",
     "dev": "next dev --experimental-https --hostname 0.0.0.0",
-    "build": "npm run build-search-data && next build",
+    "build": "npm run build-search-data && next build && next-image-export-optimizer",
     "start": "next start",
     "lint": "next lint --fix"
   },
@@ -21,7 +21,8 @@
     "flexsearch": "^0.7.43",
     "mdast-util-to-string": "^4.0.0",
     "mdx-annotations": "^0.1.4",
-    "next": "14.2.9",
+    "next": "^14.2.12",
+    "next-image-export-optimizer": "^1.15.0",
     "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
