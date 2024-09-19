@@ -42,7 +42,8 @@ export function MobileNavigation() {
   function onLinkClick(event) {
     const link = event.currentTarget;
     const cmpA = link.pathname + link.search + link.hash;
-    const cmpB = window.location.pathname + window.location.search + window.location.hash;
+    const location = window.location;
+    const cmpB = location.pathname + location.search + location.hash;
     if (cmpA === cmpB) {
       close();
     }

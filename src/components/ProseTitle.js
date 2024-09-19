@@ -2,10 +2,11 @@
 import { usePathname } from 'next/navigation';
 
 import { navMenuInfos } from '@/infos';
+import { comparePaths } from '@/utils';
 
 function getMenuGrp(navMenuInfos, pathname) {
   for (const info of navMenuInfos) {
-    if (info.path === pathname) return info.grp;
+    if (comparePaths(info.path, pathname)) return info.grp;
   }
 
   return null;

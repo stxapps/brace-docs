@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 
 import { navIndexInfo, navMenuInfos } from '@/infos';
+import { comparePaths } from '@/utils';
 
 function ArrowIcon(props) {
   return (
@@ -39,7 +40,7 @@ export function PrevNextLinks() {
   const pathname = usePathname();
 
   const infos = [navIndexInfo, ...navMenuInfos];
-  const infoIndex = infos.findIndex((info) => info.path === pathname);
+  const infoIndex = infos.findIndex((info) => comparePaths(info.path, pathname));
   const prevInfo = infoIndex > -1 ? infos[infoIndex - 1] : null;
   const nextInfo = infoIndex > -1 ? infos[infoIndex + 1] : null;
 

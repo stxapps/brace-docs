@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 
 import { navGrpInfos, navMenuInfos } from '@/infos';
+import { comparePaths } from '@/utils';
 
 export function Navigation(props) {
   const { className, onLinkClick } = props;
@@ -34,7 +35,7 @@ export function Navigation(props) {
                     onClick={onLinkClick}
                     className={clsx(
                       'block w-full pl-3.5 before:pointer-events-none before:absolute before:-left-1 before:top-1/2 before:size-1.5 before:-translate-y-1/2 before:rounded-full',
-                      info.path === pathname
+                      comparePaths(info.path, pathname)
                         ? 'font-semibold text-sky-500 before:bg-sky-500'
                         : 'text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-600 hover:before:block dark:text-slate-400 dark:before:bg-slate-700 dark:hover:text-slate-300',
                     )}

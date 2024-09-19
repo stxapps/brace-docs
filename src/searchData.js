@@ -27,37 +27,63 @@ export const searchData = [
     ],
   },
   {
-    'path': '/account',
+    'path': '/account/',
     'title': '',
     'sections': [],
   },
   {
-    'path': '/encryption',
+    'path': '/encryption/',
     'title': '',
     'sections': [],
   },
   {
-    'path': '/save-a-link',
+    'path': '/save-a-link/',
     'title': '',
     'sections': [],
   },
   {
-    'path': '/organize-links',
+    'path': '/organize-links/',
     'title': '',
     'sections': [],
   },
   {
-    'path': '/vs-pocket',
+    'path': '/custom-a-link/',
     'title': '',
     'sections': [],
   },
   {
-    'path': '/vs-raindrop',
+    'path': '/pin-links/',
     'title': '',
     'sections': [],
   },
   {
-    'path': '/bookmark-manager-101',
+    'path': '/tag-links/',
+    'title': '',
+    'sections': [],
+  },
+  {
+    'path': '/vs-pocket/',
+    'title': '',
+    'sections': [
+      [
+        'Conclusions',
+        'conclusions',
+        [
+          'if you think privacy is important and encrypt everything and only you know the encryption key is crucial, choose Brace.to',
+          'If you plan to use it simple tasks, normal use cases, choose us',
+          'If immediate user, our features are enough',
+          'If advanced user, use both',
+        ],
+      ],
+    ],
+  },
+  {
+    'path': '/vs-raindrop/',
+    'title': '',
+    'sections': [],
+  },
+  {
+    'path': '/bookmark-manager-101/',
     'title': 'Bookmark Manager 101',
     'sections': [
       [
@@ -85,12 +111,12 @@ export const searchData = [
     ],
   },
   {
-    'path': '/read-later-app-101',
+    'path': '/read-later-app-101/',
     'title': '',
     'sections': [],
   },
   {
-    'path': '/faqs',
+    'path': '/faqs/',
     'title': 'Crafting a design system for a multiplanetary future',
     'sections': [
       [
@@ -127,8 +153,16 @@ export const searchData = [
     ],
   },
   {
-    'path': '/about',
+    'path': '/about/',
     'title': '',
-    'sections': [],
+    'sections': [
+      [
+        '',
+        '',
+        [
+          'About us, about our company, about other apps',
+        ],
+      ],
+    ],
   },
 ];

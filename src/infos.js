@@ -17,6 +17,9 @@ const _navMenuInfos = [
   cnmi('encryption', 'E2E Encryption', GRP_FS),
   cnmi('save-a-link', 'Save a link', GRP_FS),
   cnmi('organize-links', 'Organize links', GRP_FS),
+  cnmi('custom-a-link', 'Custom a link', GRP_FS),
+  cnmi('pin-links', 'Pin links', GRP_FS),
+  cnmi('tag-links', 'Tag links', GRP_FS),
   cnmi('vs-pocket', 'vs.Pocket', GRP_CRS),
   cnmi('vs-raindrop', 'vs.Raindrop', GRP_CRS),
   cnmi('bookmark-manager-101', 'Bookmark manager', GRP_101),
@@ -25,6 +28,6 @@ const _navMenuInfos = [
   cnmi('about', 'About', GRP_MISC),
 ];
 for (const info of _navMenuInfos) {
-  if (info.path.length === 0) info.path = '/' + info.slug;
+  if (info.path.length === 0) info.path = '/' + info.slug + '/';
 }
 export const navMenuInfos = _navMenuInfos;

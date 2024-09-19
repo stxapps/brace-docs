@@ -9,7 +9,7 @@ import Highlighter from 'react-highlight-words';
 import clsx from 'clsx';
 
 import { navIndexInfo, navMenuInfos } from '@/infos';
-import { isString } from '@/utils';
+import { isString, comparePaths } from '@/utils';
 
 function SearchIcon(props) {
   return (
@@ -95,7 +95,7 @@ function HighlightQuery({ text, query }) {
 function SearchResult({ result, query, itemProps }) {
   const id = useId();
   const info = [navIndexInfo, ...navMenuInfos].find((info) => {
-    return info.path === result.path?.split('#')[0];
+    return comparePaths(info.path, result.path);
   });
   const hierarchy = [info?.grp, info?.name].filter((x) => isString(x));
 
