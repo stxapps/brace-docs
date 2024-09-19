@@ -172,8 +172,7 @@ const SearchInput = forwardRef(function SearchInput(props, inputRef) {
             !autocompleteState.isOpen &&
             autocompleteState.query === ''
           ) {
-            // In Safari, closing the dialog with the escape key can sometimes cause the scroll position to jump to the
-            // bottom of the page. This is a workaround for that until we can figure out a proper fix in Headless UI.
+            // In Safari, closing the dialog with the escape key can sometimes cause the scroll position to jump to the bottom of the page. This is a workaround for that until we can figure out a proper fix in Headless UI.
             if (document.activeElement instanceof HTMLElement) {
               document.activeElement.blur();
             }

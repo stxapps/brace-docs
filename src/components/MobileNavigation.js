@@ -1,5 +1,5 @@
+'use client';
 import { Suspense, useState, useEffect, useCallback } from 'react';
-
 import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { Dialog, DialogPanel } from '@headlessui/react';

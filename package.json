@@ -6,9 +6,10 @@
   "scripts": {
     "build-search-data": "node --import=specifier-resolution-node/register src/build-search-data.js",
     "dev": "next dev --experimental-https --hostname 0.0.0.0",
-    "build": "npm run build-search-data && next build && next-image-export-optimizer",
+    "build": "next build && next-image-export-optimizer",
     "start": "next start",
-    "lint": "next lint --fix"
+    "lint": "next lint --fix",
+    "deploy-prod": "bash bin/deploy-prod.sh"
   },
   "dependencies": {
     "@algolia/autocomplete-core": "^1.17.4",
