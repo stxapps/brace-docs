@@ -28,6 +28,6 @@ const _navMenuInfos = [
   cnmi('about', 'About', GRP_MISC),
 ];
 for (const info of _navMenuInfos) {
-  if (info.path.length === 0) info.path = '/' + info.slug + '/';
+  if (info.path.length === 0) info.path = '/' + info.slug;
 }
 export const navMenuInfos = _navMenuInfos;

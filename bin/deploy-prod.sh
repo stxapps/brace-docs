@@ -6,4 +6,5 @@ aws s3 sync out/nextImageExportOptimizer s3://brace-docs/nextImageExportOptimize
 
 aws s3 sync out s3://brace-docs --exclude "_next/*" --exclude "nextImageExportOptimizer/*" --exclude "images/next-image-export-optimizer-hashes.json" --size-only --delete --cache-control max-age=86400
 
+# Must invalidation index.html and index.txt
 #aws cloudfront create-invalidation --distribution-id [!!!] --paths /index.html
