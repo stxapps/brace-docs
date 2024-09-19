@@ -27,42 +27,42 @@ export const searchData = [
     ],
   },
   {
-    'path': '/account/',
+    'path': '/account',
     'title': '',
     'sections': [],
   },
   {
-    'path': '/encryption/',
+    'path': '/encryption',
     'title': '',
     'sections': [],
   },
   {
-    'path': '/save-a-link/',
+    'path': '/save-a-link',
     'title': '',
     'sections': [],
   },
   {
-    'path': '/organize-links/',
+    'path': '/organize-links',
     'title': '',
     'sections': [],
   },
   {
-    'path': '/custom-a-link/',
+    'path': '/custom-a-link',
     'title': '',
     'sections': [],
   },
   {
-    'path': '/pin-links/',
+    'path': '/pin-links',
     'title': '',
     'sections': [],
   },
   {
-    'path': '/tag-links/',
+    'path': '/tag-links',
     'title': '',
     'sections': [],
   },
   {
-    'path': '/vs-pocket/',
+    'path': '/vs-pocket',
     'title': '',
     'sections': [
       [
@@ -78,12 +78,12 @@ export const searchData = [
     ],
   },
   {
-    'path': '/vs-raindrop/',
+    'path': '/vs-raindrop',
     'title': '',
     'sections': [],
   },
   {
-    'path': '/bookmark-manager-101/',
+    'path': '/bookmark-manager-101',
     'title': 'Bookmark Manager 101',
     'sections': [
       [
@@ -111,12 +111,12 @@ export const searchData = [
     ],
   },
   {
-    'path': '/read-later-app-101/',
+    'path': '/read-later-app-101',
     'title': '',
     'sections': [],
   },
   {
-    'path': '/faqs/',
+    'path': '/faqs',
     'title': 'Crafting a design system for a multiplanetary future',
     'sections': [
       [
@@ -153,7 +153,7 @@ export const searchData = [
     ],
   },
   {
-    'path': '/about/',
+    'path': '/about',
     'title': '',
     'sections': [
       [

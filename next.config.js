@@ -19,7 +19,6 @@ const nextConfig = {
     nextImageExportOptimizer_remoteImageCacheTTL: "0",
   },
   output: 'export',
-  trailingSlash: true,
 };
 
 export default withMDX(nextConfig);
