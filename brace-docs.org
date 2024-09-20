@@ -12,6 +12,10 @@
 - npm install next-image-export-optimizer
 - // framer-motion shiki
 - // if big, ignore changes to searchData, no need to git commit
+* aws s3
+- No block public, no acl, enable static website: index.html, 404.html, bucket policy public, allow cors
+* aws cloudfront
+- custom domain, https, http -> https, gzip response, no trailing slash, append .html on paths
 * Add a new page
 - New mdx file with name as url path (slug)
 - Add to infos
