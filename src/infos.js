@@ -31,3 +31,18 @@ for (const info of _navMenuInfos) {
   if (info.path.length === 0) info.path = '/' + info.slug;
 }
 export const navMenuInfos = _navMenuInfos;
+
+export const DOMAIN_NAME = 'https://docs.brace.to';
+
+export const twInfo = {
+  site: '@bracedotto',
+  images: [DOMAIN_NAME + '/twitter-card-image-pattern5.png'],
+  card: 'summary_large_image',
+};
+
+export const ogInfo = {
+  siteName: 'Docs - Brace.to',
+  url: DOMAIN_NAME,
+  type: 'article',
+  images: [DOMAIN_NAME + '/twitter-card-image-pattern5.png'],
+};
