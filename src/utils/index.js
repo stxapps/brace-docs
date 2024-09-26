@@ -20,3 +20,7 @@ export const comparePaths = (a, b) => {
   if (b.endsWith('/')) b = b.slice(0, -1);
   return a === b;
 };
+
+export const deriveMetaTitle = (title) => {
+  return `${title} - Brace.to`;
+};

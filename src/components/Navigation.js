@@ -17,10 +17,10 @@ export function Navigation(props) {
           <Link href="/">Documentation</Link>
         </li>
         <li>
-          <Link href="/">Blog</Link>
+          <a href="https://medium.com/@stxapps" target="_blank" rel="noreferrer">Blog</a>
         </li>
         <li>
-          <Link href="/">Support</Link>
+          <a href="https://brace.to/#support" target="_blank" rel="noreferrer">Support</a>
         </li>
         {navGrpInfos.map(({ grp }) => (
           <li key={grp}>

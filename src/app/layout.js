@@ -1,5 +1,4 @@
 import { Inter } from 'next/font/google';
-import localFont from 'next/font/local';
 import clsx from 'clsx';
 
 import './globals.css';
@@ -10,13 +9,6 @@ import { Navigation } from '@/components/Navigation';
 
 const inter = Inter({ subsets: ['latin'], display: 'swap', variable: '--font-inter' });
 
-// Use local version of Lexend so that we can use OpenType features
-const lexend = localFont({
-  src: '../fonts/lexend.woff2',
-  display: 'swap',
-  variable: '--font-lexend',
-});
-
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -24,19 +16,11 @@ export const viewport = {
     { media: '(prefers-color-scheme: light)', color: '#ffffff' },
     { media: '(prefers-color-scheme: dark)', color: 'rgb(17, 24, 39)' },
   ],
-}
-
-export const metadata = {
-  title: {
-    template: '%s - Brace.to',
-    default: 'Docs - Brace.to',
-  },
-  description: 'Save links to everything and visit them later easily, anytime, on any device, with Web3 technology that empowers you to truly own your account and data.',
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={clsx('h-full antialiased', inter.variable, lexend.variable)} suppressHydrationWarning>
+    <html lang="en" className={clsx('h-full antialiased', inter.variable)} suppressHydrationWarning>
       <body className="flex min-h-full bg-white dark:bg-slate-900">
         <Providers>
           <div className="flex w-full flex-col">

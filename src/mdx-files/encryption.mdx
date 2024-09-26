@@ -1,0 +1,46 @@
+export const title = 'Encryption';
+
+export const metadata = {
+  title,
+  description: 'Everything is encrypted; only you, with your Secret Key, can see the content inside.',
+};
+
+Everything is encrypted; only you, with your Secret Key, can see the content inside.
+
+In our apps, all your content is encrypted with your Secret Key. Only your encrypted content leaves your device to be stored on servers. At the same time, your Secret Key always stays in your device, ensuring that only you know your Secret Key. No one can see the content inside your encrypted content because only your Secret Key can decrypt it. Your encrypted data must be downloaded to your device to decrypt and access the content inside, hence end-to-end encryption. **You can be assured that your encrypted content cannot be used to create targeted ads. Even if your encrypted content is stolen, no information is leaked.**
+
+## Encryption Process
+
+Encryption involves a multi-step process that begins with generating a random number with a cryptographically secure random number generator. This random number selects 24 unique words from a predefined wordlist, forming a Secret Key. Then, a key derivation function named PBKDF2 is applied to the Secret Key, transforming it into a ~100-character string known as a private key. With the private key, an industry-standard encryption algorithm named AES-256-CBC is used to securely encrypt data.
+
+Also, the private key is the foundation for generating a public key and signing messages.
+
+## Encryption Algorithms
+
+### Cryptographically Secure Random Number Generator
+
+A Cryptographically Secure Random Number Generator (CSPRNG) is a specialized random number generator designed to produce sequences of numbers statistically indistinguishable from truly random numbers. CSPRNGs are specifically engineered to avoid such predictability, unlike ordinary random number generators, which may exhibit patterns or biases.
+
+The output of a CSPRNG should be impossible to predict based on past outputs or any other available information. This is crucial for cryptographic applications, as any predictability could be exploited by attackers to compromise the security of a system. Additionally, the sequence of numbers produced by a CSPRNG should exhibit statistical properties consistent with a truly random sequence, such as uniform distribution, no correlations, and passing various statistical tests. This ensures that the CSPRNG is not generating biased or predictable sequences of numbers. Finally, a CSPRNG should resist various attacks that could compromise its security, such as cryptanalysis or side-channel attacks.
+
+A CSPRNG is a crucial component of modern cryptography. It provides a reliable source of random numbers essential for ensuring cryptographic system security.
+
+### PBKDF2
+
+PBKDF2 (Password-Based Key Derivation Function 2) is a cryptographic algorithm that transforms a relatively short password or passphrase into a longer, more complex cryptographic key. This derived key can be used for various cryptographic operations, such as encryption, decryption, or digital signing.
+
+PBKDF2 combines the password with a random salt value and then iteratively applies a pseudorandom function (PRF) to the resulting input. The number of iterations can be adjusted to control the computational cost of deriving the key, making it more resistant to brute-force attacks. The final output of PBKDF2 is a derived key of a desired length, typically 128, 192, or 256 bits.
+
+PBKDF2 is widely used due to its simplicity, security, and flexibility. It is relatively easy to implement and understand, making it a popular choice for various cryptographic applications. PBKDF2's iterative nature makes it resistant to brute-force attacks, even with powerful hardware. Additionally, PBKDF2 can be used with multiple PRFs and iteration counts, allowing customization to different security requirements.
+
+PBKDF2 is commonly used for password hashing, key derivation, and authentication. It hashes passwords before storing them in databases, making it more difficult for attackers to recover the original passwords. PBKDF2 can also derive cryptographic keys from user-provided passwords or passphrases for various cryptographic operations. Furthermore, PBKDF2 can be used in authentication protocols to verify the authenticity of users based on their passwords.
+
+### AES-256-CBC
+
+AES-256-CBC (Advanced Encryption Standard with Cipher Block Chaining) is a robust and widely recognized encryption algorithm. It provides high security for data protection by encrypting data by breaking it into 16-byte blocks and applying complex mathematical operations to each block.
+
+The "256" in AES-256 refers to the key size, which is 256 bits long. A more extended key size makes it exponentially harder for an unauthorized party to crack the encryption, providing higher security.
+
+The "CBC" in AES-256-CBC stands for Cipher Block Chaining. This mode of operation links each encrypted block to the previous one, making it more difficult for attackers to identify patterns or weaknesses in the encryption. If one block is altered, it affects the decryption of subsequent blocks, making it less likely for an attacker to successfully tamper with the data.
+
+Using AES-256-CBC, your data is effectively scrambled and protected from unauthorized access. This encryption method is widely trusted and used in various applications, including secure messaging, online banking, and data storage.
