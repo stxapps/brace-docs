@@ -14,13 +14,22 @@ export function Navigation(props) {
     <nav className={clsx('text-base lg:text-sm', className)}>
       <ul role="list" className="space-y-9">
         <li>
-          <Link href="/">Documentation</Link>
+          <Link
+            href="/"
+            onClick={onLinkClick}
+            className={clsx(
+              'block w-full font-semibold hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300',
+              comparePaths("/", pathname)
+                ? 'bg-gray-400 dark:bg-gray-500'
+                : '',
+            )}
+          >Documentation</Link>
         </li>
         <li>
-          <a href="https://medium.com/@stxapps" target="_blank" rel="noreferrer">Blog</a>
+          <Link href="https://medium.com/@stxapps" target="_blank" rel="noreferrer">Blog</Link>
         </li>
         <li>
-          <a href="https://brace.to/#support" target="_blank" rel="noreferrer">Support</a>
+          <Link href="https://brace.to/#support" target="_blank" rel="noreferrer">Support</Link>
         </li>
         {navGrpInfos.map(({ grp }) => (
           <li key={grp}>

@@ -2,6 +2,7 @@ import { ProseTitle } from '@/components/ProseTitle';
 import { ProseContent } from '@/components/ProseContent';
 import { TableOfContents } from '@/components/TableOfContents';
 import { PrevNextLinks } from '@/components/PrevNextLinks';
+import { Footer } from '@/components/Footer';
 
 export function Main({ children, ...props }) {
   const { title, sections } = props;
@@ -14,6 +15,7 @@ export function Main({ children, ...props }) {
           <ProseContent>{children}</ProseContent>
         </article>
         <PrevNextLinks />
+        <Footer />
       </div>
       <TableOfContents sections={sections} />
     </>

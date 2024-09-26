@@ -1,6 +1,18 @@
 import Link from 'next/link';
-import ExportedImage from 'next-image-export-optimizer';
+import Image from 'next-image-export-optimizer';
 import clsx from 'clsx';
+
+import { isString } from '@/utils';
+
+function A(props) {
+  const extProps = {};
+  if (isString(props.href) && props.href.toLowerCase().startsWith('http')) {
+    extProps.target = '_blank';
+    extProps.rel = 'noreferrer';
+  }
+
+  return <Link {...props} {...extProps} />
+}
 
 function InfoIcon(props) {
   return (
@@ -76,7 +88,7 @@ function Property({ name, children, type }) {
 }
 
 const moreComponents = {
-  a: Link, Image: ExportedImage, Note, Row, Col, Properties, Property,
+  a: A, Image, Note, Row, Col, Properties, Property,
 };
 
 export function useMDXComponents(components) {

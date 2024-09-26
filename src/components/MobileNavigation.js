@@ -1,10 +1,8 @@
 'use client';
 import { Suspense, useState, useEffect, useCallback } from 'react';
-import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { Dialog, DialogPanel } from '@headlessui/react';
 
-import { Logomark } from '@/components/Logo';
 import { Navigation } from '@/components/Navigation';
 
 function MenuIcon(props) {
@@ -63,9 +61,6 @@ export function MobileNavigation() {
             <button type="button" onClick={close} aria-label="Close navigation">
               <CloseIcon className="size-6 stroke-slate-500" />
             </button>
-            <Link href="/" className="ml-6" aria-label="Home page">
-              <Logomark className="size-9" />
-            </Link>
           </div>
           <Navigation className="mt-5 px-1" onLinkClick={onLinkClick} />
         </DialogPanel>

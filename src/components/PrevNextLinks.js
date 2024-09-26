@@ -47,7 +47,7 @@ export function PrevNextLinks() {
   if (!prevInfo && !nextInfo) return null;
 
   return (
-    <dl className="mt-12 flex border-t border-slate-200 pt-6 dark:border-slate-800">
+    <dl className="mt-12 flex pt-6">
       {prevInfo && <PrevNextLink dir="previous" {...prevInfo} />}
       {nextInfo && <PrevNextLink className="ml-auto text-right" {...nextInfo} />}
     </dl>

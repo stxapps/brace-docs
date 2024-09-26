@@ -9,6 +9,7 @@
     "allowSyntheticDefaultImports": true,
     "jsx": "preserve",
     "noEmit": true,
+    "typeRoots": ["./src/@types", "./node_modules/@types"],
     "paths": {
       "@/*": ["./src/*"]
     }
