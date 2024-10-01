@@ -17,17 +17,17 @@ function ArrowIcon(props) {
 function PrevNextLink({ name, path, dir = 'next', ...props }) {
   return (
     <div {...props}>
-      <dt className="font-display text-sm font-medium text-slate-900 dark:text-white">
+      <dt className="text-sm font-medium text-gray-900 dark:text-white">
         {dir === 'next' ? 'Next' : 'Previous'}
       </dt>
       <dd className="mt-1">
         <Link href={path} className={clsx(
-          'flex items-center gap-x-1 text-base font-semibold text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300',
+          'group flex items-center gap-x-1 focus:outline-none focus-visible:rounded focus-visible:ring',
           dir === 'previous' && 'flex-row-reverse',
         )}>
-          {name}
+          <span className="text-base text-gray-500 group-hover:text-gray-600 dark:text-gray-400 dark:group-hover:text-gray-300">{name}</span>
           <ArrowIcon className={clsx(
-            'size-4 flex-none fill-current',
+            'size-3.5 flex-none fill-current text-gray-500 group-hover:text-gray-600 dark:text-gray-400 dark:group-hover:text-gray-300',
             dir === 'previous' && '-scale-x-100',
           )} />
         </Link>

@@ -49,20 +49,18 @@ export function MobileNavigation() {
 
   return (
     <>
-      <button type="button" onClick={open} className="relative" aria-label="Open navigation">
-        <MenuIcon className="size-6 stroke-slate-500" />
+      <button className="group size-14 flex items-center justify-center focus:outline-none sm:w-[4.5rem]" type="button" onClick={open} aria-label="Open navigation">
+        <MenuIcon className="size-6 stroke-gray-500 rounded group-hover:stroke-gray-600 group-focus-visible:ring group-focus-visible:ring-offset-2 dark:group-focus-visible:ring-offset-gray-900 dark:group-hover:stroke-gray-400" />
       </button>
       <Suspense fallback={null}>
         <CloseOnNavigation close={close} />
       </Suspense>
-      <Dialog open={isOpen} onClose={close} className="fixed inset-0 z-50 flex items-start overflow-y-auto bg-slate-900/50 pr-10 backdrop-blur lg:hidden" aria-label="Navigation">
-        <DialogPanel className="min-h-full w-full max-w-xs bg-white px-4 pb-12 pt-5 sm:px-6 dark:bg-slate-900">
-          <div className="flex items-center">
-            <button type="button" onClick={close} aria-label="Close navigation">
-              <CloseIcon className="size-6 stroke-slate-500" />
-            </button>
-          </div>
-          <Navigation className="mt-5 px-1" onLinkClick={onLinkClick} />
+      <Dialog open={isOpen} onClose={close} className="fixed inset-0 z-50 flex items-start overflow-y-auto bg-gray-100 pr-10 dark:bg-gray-800 lg:hidden" aria-label="Navigation">
+        <DialogPanel className="min-h-full w-full max-w-xs bg-white px-4 pb-12 pt-[calc(3.5rem+theme(spacing.16))] sm:px-6 dark:bg-gray-900">
+          <Navigation onLinkClick={onLinkClick} />
+          <button className="group absolute top-0 left-0 size-14 flex items-center justify-center focus:outline-none sm:w-[4.5rem]" type="button" onClick={close} aria-label="Close navigation">
+            <CloseIcon className="size-6 stroke-gray-500 rounded group-focus-visible:ring group-focus-visible:ring-offset-2 dark:group-focus-visible:ring-offset-gray-900" />
+          </button>
         </DialogPanel>
       </Dialog>
     </>

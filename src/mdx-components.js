@@ -11,7 +11,7 @@ function A(props) {
     extProps.rel = 'noreferrer';
   }
 
-  return <Link {...props} {...extProps} />
+  return <Link {...props} {...extProps} />;
 }
 
 function InfoIcon(props) {
@@ -26,8 +26,8 @@ function InfoIcon(props) {
 
 function Note({ children }) {
   return (
-    <div className="my-6 flex gap-2.5 rounded-2xl border border-emerald-500/20 bg-emerald-50/50 p-4 leading-6 text-emerald-900 dark:border-emerald-500/30 dark:bg-emerald-500/5 dark:text-emerald-200 dark:[--tw-prose-links-hover:theme(colors.emerald.300)] dark:[--tw-prose-links:theme(colors.white)]">
-      <InfoIcon className="mt-1 size-4 flex-none fill-emerald-500 stroke-white dark:fill-emerald-200/20 dark:stroke-emerald-200" />
+    <div className="my-6 flex gap-2.5 rounded-2xl border border-green-500/20 bg-green-50/50 p-4 leading-6 text-green-900 dark:border-green-500/30 dark:bg-green-500/5 dark:text-green-200 dark:[--tw-prose-links-hover:theme(colors.green.300)] dark:[--tw-prose-links:theme(colors.white)]">
+      <InfoIcon className="mt-1 size-4 flex-none fill-green-500 stroke-white dark:fill-green-200/20 dark:stroke-green-200" />
       <div className="[&>:first-child]:mt-0 [&>:last-child]:mb-0">
         {children}
       </div>
@@ -57,7 +57,7 @@ function Col({ children, sticky = false }) {
 function Properties({ children }) {
   return (
     <div className="my-6">
-      <ul role="list" className="m-0 max-w-[calc(theme(maxWidth.lg)-theme(spacing.8))] list-none divide-y divide-zinc-900/5 p-0 dark:divide-white/5">
+      <ul role="list" className="m-0 max-w-[calc(theme(maxWidth.lg)-theme(spacing.8))] list-none divide-y divide-gray-900/5 p-0 dark:divide-white/5">
         {children}
       </ul>
     </div>
@@ -74,7 +74,7 @@ function Property({ name, children, type }) {
         </dd>
         {type && (<>
           <dt className="sr-only">Type</dt>
-          <dd className="font-mono text-xs text-zinc-400 dark:text-zinc-500">
+          <dd className="font-mono text-xs text-gray-400 dark:text-gray-500">
             {type}
           </dd>
         </>)}

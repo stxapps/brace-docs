@@ -23,6 +23,7 @@ const _navMenuInfos = [
   //cnmi('custom-a-link', 'Custom a Link', GRP_FS),
   //cnmi('pin-links', 'Pin Links', GRP_FS),
   //cnmi('tag-links', 'Tag Links', GRP_FS),
+  //migration import, export, delete data
   //cnmi('vs-pocket', 'vs.Pocket', GRP_CRS),
   //cnmi('vs-raindrop', 'vs.Raindrop', GRP_CRS),
   cnmi('bookmark-manager-101', 'Bookmark Manager', GRP_101),

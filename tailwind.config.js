@@ -8,7 +8,6 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['var(--font-inter)', ...fontFamily.sans],
-        display: ['var(--font-lexend)', { fontFeatureSettings: '"ss01"' }],
       },
       maxWidth: {
         '8xl': '88rem',

@@ -30,9 +30,9 @@ function SystemIcon(props) {
 }
 
 const themes = [
-  { name: 'Light', value: 'light', icon: LightIcon },
-  { name: 'Dark', value: 'dark', icon: DarkIcon },
-  { name: 'System', value: 'system', icon: SystemIcon },
+  { name: 'Light', value: 'light', icon: LightIcon, iconSize: 'size-3.5' },
+  { name: 'Dark', value: 'dark', icon: DarkIcon, iconSize: 'size-4' },
+  { name: 'System', value: 'system', icon: SystemIcon, iconSize: 'size-3.5' },
 ];
 
 export function ThemeSelector(props) {
@@ -50,29 +50,29 @@ export function ThemeSelector(props) {
   return (
     <Listbox as="div" value={theme} onChange={setTheme} {...props}>
       <Label className="sr-only">Theme</Label>
-      <ListboxButton className="flex size-6 items-center justify-center rounded-lg shadow-md shadow-black/5 ring-1 ring-black/5 dark:bg-slate-700 dark:ring-inset dark:ring-white/5" aria-label="Theme">
-        <LightIcon className={clsx('size-4 dark:hidden', theme === 'system' ? 'fill-slate-400' : 'fill-sky-400')} />
-        <DarkIcon className={clsx('hidden size-4 dark:block', theme === 'system' ? 'fill-slate-400' : 'fill-sky-400')} />
+      <ListboxButton className="flex size-14 items-center justify-center focus:outline-none group" aria-label="Theme">
+        <div className="group size-8 rounded-full border border-gray-400 group-hover:border-gray-500 dark:border-gray-500 dark:group-hover:border-gray-400 flex items-center justify-center group-focus-visible:ring">
+          <LightIcon className="size-3.5 dark:hidden fill-gray-500 group-hover:fill-gray-600" />
+          <DarkIcon className="hidden size-4 fill-gray-400 group-hover:fill-gray-300 dark:block" />
+        </div>
       </ListboxButton>
-      <ListboxOptions className="absolute left-1/2 top-full mt-3 w-36 -translate-x-1/2 space-y-1 rounded-xl bg-white p-3 text-sm font-medium shadow-md shadow-black/5 ring-1 ring-black/5 dark:bg-slate-800 dark:ring-white/5">
+      <ListboxOptions className="absolute left-1/2 top-full mt-3 w-36 -translate-x-1/2 space-y-1 rounded-xl bg-white p-3 text-sm font-medium shadow-md shadow-black/5 ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/5">
         {themes.map((theme) => (
           <ListboxOption
             key={theme.value}
             value={theme.value}
-            className={({ focus, selected }) => clsx(
+            className={({ focus }) => clsx(
               'flex cursor-pointer select-none items-center rounded-[0.625rem] p-1',
               {
-                'text-sky-500': selected,
-                'text-slate-900 dark:text-white': focus && !selected,
-                'text-slate-700 dark:text-slate-400': !focus && !selected,
-                'bg-slate-100 dark:bg-slate-900/40': focus,
+                'bg-gray-100 text-gray-900 dark:bg-gray-900/40 dark:text-white': focus,
+                'text-gray-700 dark:text-gray-400': !focus,
               }
             )}
           >
-            {({ selected }) => (
+            {() => (
               <>
-                <div className="rounded-md bg-white p-1 shadow ring-1 ring-slate-900/5 dark:bg-slate-700 dark:ring-inset dark:ring-white/5">
-                  <theme.icon className={clsx('size-4', selected ? 'fill-sky-400 dark:fill-sky-400' : 'fill-slate-400')} />
+                <div className="rounded-full bg-white p-1 shadow ring-1 ring-gray-900/5 dark:bg-gray-700 dark:ring-inset dark:ring-white/5 size-6 flex items-center justify-center">
+                  <theme.icon className={clsx('fill-gray-400', theme.iconSize)} />
                 </div>
                 <div className="ml-3">{theme.name}</div>
               </>

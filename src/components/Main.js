@@ -9,7 +9,7 @@ export function Main({ children, ...props }) {
 
   return (
     <>
-      <div className="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pl-8 lg:pr-0 xl:px-16">
+      <div className="min-w-0 max-w-2xl flex-auto px-4 pt-14 pb-16 lg:max-w-none lg:pl-8 lg:pr-0 xl:pl-16 xl:pr-14">
         <article>
           <ProseTitle>{title}</ProseTitle>
           <ProseContent>{children}</ProseContent>

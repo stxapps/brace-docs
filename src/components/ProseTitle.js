@@ -1,5 +1,6 @@
 'use client';
 import { usePathname } from 'next/navigation';
+import clsx from 'clsx';
 
 import { navMenuInfos } from '@/infos';
 import { comparePaths } from '@/utils';
@@ -19,11 +20,11 @@ export function ProseTitle({ children: title }) {
   if (!title) return null;
 
   return (
-    <header className="mb-9 space-y-1">
-      {grp && <p className="font-display text-sm font-medium text-sky-500">
+    <header className={clsx('mb-9 space-y-1', grp && 'mt-2')}>
+      {grp && <p className="text-sm text-gray-500 dark:text-gray-400">
         {grp}
       </p>}
-      <h1 className="font-display text-3xl tracking-tight text-slate-900 dark:text-white">{title}</h1>
+      <h1 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">{title}</h1>
     </header>
   );
 }
