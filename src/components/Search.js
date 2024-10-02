@@ -101,7 +101,7 @@ function SearchResult({ result, query, itemProps }) {
 
   return (
     <li
-      className="group block cursor-default rounded-lg px-3 py-2 aria-selected:bg-gray-100 dark:aria-selected:bg-gray-700/30"
+      className="group block cursor-default rounded-lg px-3 py-2 aria-selected:bg-gray-100 dark:aria-selected:bg-gray-700"
       aria-labelledby={`${id}-hierarchy ${id}-title`}
       {...itemProps}
     >
@@ -113,7 +113,7 @@ function SearchResult({ result, query, itemProps }) {
           {hierarchy.map((item, itemIndex, items) => (
             <Fragment key={itemIndex}>
               <HighlightQuery text={item} query={query} />
-              <span className={itemIndex === items.length - 1 ? 'sr-only' : 'mx-2 text-gray-500 dark:text-gray-400'}>/</span>
+              <span className={itemIndex === items.length - 1 ? 'sr-only' : 'mx-2 text-gray-400 dark:text-gray-500'}>/</span>
             </Fragment>
           ))}
         </div>
@@ -254,7 +254,7 @@ function SearchDialog(props) {
                 {/** @ts-expect-error */}
                 <SearchInput ref={inputRef} autocomplete={autocomplete} autocompleteState={autocompleteState} onClose={() => setOpen(false)} />
                 {/** @ts-expect-error */}
-                <div ref={panelRef} className="border-t border-gray-200 bg-white px-2 py-3 empty:hidden dark:border-gray-700 dark:bg-gray-800" {...autocomplete.getPanelProps({})} >
+                <div ref={panelRef} className="border-t border-gray-200 bg-white px-2 py-3 empty:hidden dark:border-gray-600 dark:bg-gray-800" {...autocomplete.getPanelProps({})} >
                   {autocompleteState.isOpen && (
                     <SearchResults autocomplete={autocomplete} autocompleteState={autocompleteState} />
                   )}
@@ -305,7 +305,7 @@ export function Search() {
 
   return (
     <>
-      <button type="button" className="group flex size-14 items-center justify-center focus:outline-none md:justify-start md:h-auto md:w-60 md:flex-none md:rounded-full md:py-1.5 md:pl-4 md:pr-3.5 md:text-sm md:border md:border-gray-300 md:hover:border-gray-400 lg:w-72 dark:md:bg-gray-800 dark:md:border-gray-600 dark:md:hover:border-gray-500 md:focus-visible:ring" {...buttonProps}>
+      <button type="button" className="group flex size-14 items-center justify-center focus:outline-none md:justify-start md:h-auto md:w-60 md:flex-none md:rounded-full md:py-1.5 md:pl-4 md:pr-3.5 md:text-sm md:border md:border-gray-300 md:hover:border-gray-400 lg:w-72 dark:md:border-gray-600 dark:md:hover:border-gray-500 md:focus-visible:ring" {...buttonProps}>
         <SearchIcon className="size-6 md:size-[18px] flex-none fill-gray-400 group-hover:fill-gray-500 dark:fill-gray-500 dark:group-hover:fill-gray-400 rounded group-focus-visible:ring group-focus-visible:ring-offset-2 group-focus-visible:ring-offset-white dark:group-focus-visible:ring-offset-gray-900 md:group-focus-visible:ring-0 md:group-focus-visible:ring-offset-0 md:group-hover:fill-gray-400 md:dark:group-hover:fill-gray-500" />
         <span className="sr-only md:not-sr-only md:ml-2 md:text-gray-500 md:dark:text-gray-400">Search docs</span>
         {modifierKey && (
