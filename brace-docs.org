@@ -16,6 +16,30 @@
 - No block public, no acl, enable static website: index.html, 404.html, bucket policy public, allow cors
 * aws cloudfront
 - custom domain, https, http -> https, gzip response, no trailing slash, append .html on paths
+- cloudfron function: rewriteUrl
+  function handler(event) {
+      // NOTE: This function is for a viewer request event trigger.
+      // Choose viewer request for event trigger when you associate this function with a distribution.
+      const request = event.request;
+      const uri = request.uri;
+
+      if (uri === '' || uri === '/') return request;
+      if (uri.endsWith('/')) {
+          return {
+              statusCode: 301,
+              statusDescription: 'Moved Permanently',
+              headers: {
+                  location: { value: `${uri.slice(0, -1)}` },
+              },
+          };
+      }
+      if (uri.split('/').pop().includes('.')) return request;
+
+      request.uri += '.html';
+      return request;
+  }
+- ref
+  + medium.com/@amardewri/solving-url-rewriting-challenges-for-static-next-js-sites-ssg-on-aws-s3-and-aws-cloudfront-55fec9fe04ed
 * Add a new page
 - New mdx file with name as url path (slug)
 - Add to infos

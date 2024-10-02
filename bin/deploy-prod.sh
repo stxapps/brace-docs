@@ -4,7 +4,7 @@ aws s3 sync out/_next s3://brace-docs/_next --size-only --delete --cache-control
 
 aws s3 sync out/nextImageExportOptimizer s3://brace-docs/nextImageExportOptimizer --size-only --delete --cache-control max-age=31536000
 
-aws s3 sync out s3://brace-docs --exclude "_next/*" --exclude "nextImageExportOptimizer/*" --exclude "images/next-image-export-optimizer-hashes.json" --size-only --delete --cache-control max-age=86400
+aws s3 sync out s3://brace-docs --exclude "_next/*" --exclude "nextImageExportOptimizer/*" --size-only --delete --cache-control max-age=86400
 
 # Use CloudFront Function instead to map url path to html file
 #(cd out &&
@@ -15,6 +15,5 @@ aws s3 sync out s3://brace-docs --exclude "_next/*" --exclude "nextImageExportOp
 #    aws s3 cp ${HTMLFILE} s3://brace-docs/$HTMLFILE_WITHOUT_EXT --content-type "text/html" --cache-control max-age=86400
 #  done)
 
-# Must invalidation index.html and index.txt
-#aws cloudfront create-invalidation --distribution-id [!!!] --paths "/*"
-#aws cloudfront create-invalidation --distribution-id [!!!] --paths /index.html
+aws cloudfront create-invalidation --distribution-id EJSU0ILKB44LH --paths /index.html /index.txt
+#aws cloudfront create-invalidation --distribution-id EJSU0ILKB44LH --paths "/*"
