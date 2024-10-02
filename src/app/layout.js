@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
               <div className="hidden lg:relative lg:block lg:flex-none">
                 <div className="absolute right-0 top-0 h-28 w-px bg-gradient-to-t from-gray-200 dark:from-gray-700" />
                 <div className="absolute bottom-0 right-0 top-28 w-px bg-gray-200 dark:bg-gray-700" />
-                <div className="sticky top-[3.5rem] -ml-0.5 h-[calc(100vh-3.5rem)] w-64 overflow-y-auto overflow-x-hidden py-16 pl-0.5 pr-8 xl:pr-10">
+                <div className="sticky top-14 -ml-0.5 h-[calc(100vh-3.5rem)] w-64 overflow-y-auto overflow-x-hidden py-16 pl-0.5 pr-8 xl:pr-10">
                   <Navigation />
                 </div>
               </div>

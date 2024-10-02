@@ -69,7 +69,7 @@ export function TableOfContents({ sections }) {
   if (isEmpty(sections)) return null;
 
   return (
-    <div className="hidden xl:sticky xl:top-[3.5rem] xl:-mr-6 xl:block xl:h-[calc(100vh-3.5rem)] xl:flex-none xl:overflow-y-auto xl:py-[4.25rem] xl:pl-2 xl:pr-6">
+    <div className="hidden xl:sticky xl:top-14 xl:-mr-6 xl:block xl:h-[calc(100vh-3.5rem)] xl:flex-none xl:overflow-y-auto xl:py-[4.25rem] xl:pl-2 xl:pr-6">
       <nav aria-labelledby="on-this-page-title" className="w-56">
         <h2 id="on-this-page-title" className="text-sm font-medium text-gray-900 dark:text-white">On this page</h2>
         <ol role="list" className="mt-4 space-y-3 text-sm">

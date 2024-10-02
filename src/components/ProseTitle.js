@@ -24,7 +24,7 @@ export function ProseTitle({ children: title }) {
       {grp && <p className="text-sm text-gray-500 dark:text-gray-400">
         {grp}
       </p>}
-      <h1 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">{title}</h1>
+      <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">{title}</h1>
     </header>
   );
 }

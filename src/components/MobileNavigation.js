@@ -49,17 +49,17 @@ export function MobileNavigation() {
 
   return (
     <>
-      <button className="group size-14 flex items-center justify-center focus:outline-none sm:w-[4.5rem]" type="button" onClick={open} aria-label="Open navigation">
-        <MenuIcon className="size-6 stroke-gray-500 rounded group-hover:stroke-gray-600 group-focus-visible:ring group-focus-visible:ring-offset-2 dark:group-focus-visible:ring-offset-gray-900 dark:group-hover:stroke-gray-400" />
+      <button className="group flex size-14 items-center justify-center focus:outline-none sm:w-[4.5rem]" type="button" onClick={open} aria-label="Open navigation">
+        <MenuIcon className="size-6 rounded stroke-gray-500 group-hover:stroke-gray-600 group-focus-visible:ring group-focus-visible:ring-offset-2 dark:group-hover:stroke-gray-400 dark:group-focus-visible:ring-offset-gray-900" />
       </button>
       <Suspense fallback={null}>
         <CloseOnNavigation close={close} />
       </Suspense>
-      <Dialog open={isOpen} onClose={close} className="fixed inset-0 z-50 flex items-start overflow-y-auto bg-gray-100 pr-10 dark:bg-gray-800 lg:hidden" aria-label="Navigation">
+      <Dialog open={isOpen} onClose={close} className="fixed inset-0 z-50 flex items-start overflow-y-auto bg-gray-100 pr-10 lg:hidden dark:bg-gray-800" aria-label="Navigation">
         <DialogPanel className="min-h-full w-full max-w-xs bg-white px-4 pb-12 pt-[calc(3.5rem+theme(spacing.16))] sm:px-6 dark:bg-gray-900">
           <Navigation onLinkClick={onLinkClick} />
-          <button className="group absolute top-0 left-0 size-14 flex items-center justify-center focus:outline-none sm:w-[4.5rem]" type="button" onClick={close} aria-label="Close navigation">
-            <CloseIcon className="size-6 stroke-gray-500 rounded group-focus-visible:ring group-focus-visible:ring-offset-2 dark:group-focus-visible:ring-offset-gray-900" />
+          <button className="group absolute left-0 top-0 flex size-14 items-center justify-center focus:outline-none sm:w-[4.5rem]" type="button" onClick={close} aria-label="Close navigation">
+            <CloseIcon className="size-6 rounded stroke-gray-500 group-focus-visible:ring group-focus-visible:ring-offset-2 dark:group-focus-visible:ring-offset-gray-900" />
           </button>
         </DialogPanel>
       </Dialog>

@@ -42,7 +42,7 @@ export function Navigation(props) {
           <Link
             href="/"
             onClick={onLinkClick}
-            className={clsx('group flex items-center block w-full focus:outline-none focus-visible:ring rounded')}
+            className={clsx('group flex w-full items-center rounded focus:outline-none focus-visible:ring')}
           >
             <DocumentationIcon className={clsx(
               'size-[1.1875rem]',
@@ -59,15 +59,15 @@ export function Navigation(props) {
           </Link>
         </li>
         <li>
-          <Link className="group block flex items-center w-full focus:outline-none focus-visible:ring rounded" href="https://medium.com/@stxapps" target="_blank" rel="noreferrer">
+          <Link className="group flex w-full items-center rounded focus:outline-none focus-visible:ring" href="https://medium.com/@stxapps" target="_blank" rel="noreferrer">
             <BlogIcon className="size-[1.125rem] text-gray-600 group-hover:text-gray-900 dark:text-gray-300 dark:group-hover:text-gray-100" />
-            <span className="ml-1.5 text-gray-700 font-medium group-hover:text-gray-900 dark:text-gray-200 dark:group-hover:text-white">Blog</span>
+            <span className="ml-1.5 font-medium text-gray-700 group-hover:text-gray-900 dark:text-gray-200 dark:group-hover:text-white">Blog</span>
           </Link>
         </li>
         <li>
-          <Link className="-ml-px group block flex items-center w-full focus:outline-none focus-visible:ring rounded" href="https://brace.to/#support" target="_blank" rel="noreferrer">
+          <Link className="group -ml-px flex w-full items-center rounded focus:outline-none focus-visible:ring" href="https://brace.to/#support" target="_blank" rel="noreferrer">
             <SupportIcon className="size-[1.125rem] text-gray-600 group-hover:text-gray-800 dark:text-gray-300 dark:group-hover:text-gray-100" />
-            <span className="ml-1.5 text-gray-700 font-medium group-hover:text-gray-900 dark:text-gray-200 dark:group-hover:text-white">Support</span>
+            <span className="ml-1.5 font-medium text-gray-700 group-hover:text-gray-900 dark:text-gray-200 dark:group-hover:text-white">Support</span>
           </Link>
         </li>
         {navGrpInfos.map(({ grp }) => (
@@ -82,9 +82,9 @@ export function Navigation(props) {
                     href={info.path}
                     onClick={onLinkClick}
                     className={clsx(
-                      'block w-full pl-3.5 before:pointer-events-none before:absolute before:-left-1 before:top-1/2 before:size-1.5 before:-translate-y-1/2 before:rounded-full focus:outline-none focus-visible:ring rounded',
+                      'block w-full rounded pl-3.5 before:pointer-events-none before:absolute before:-left-1 before:top-1/2 before:size-1.5 before:-translate-y-1/2 before:rounded-full focus:outline-none focus-visible:ring',
                       comparePaths(info.path, pathname)
-                        ? 'font-semibold text-gray-600 dark:text-gray-300 before:bg-gray-400 dark:before:bg-gray-500'
+                        ? 'font-semibold text-gray-600 before:bg-gray-400 dark:text-gray-300 dark:before:bg-gray-500'
                         : 'text-gray-500 before:hidden before:bg-gray-300 hover:text-gray-600 hover:before:block dark:text-gray-400 dark:before:bg-gray-600 dark:hover:text-gray-300',
                     )}
                   >{info.name}</Link>

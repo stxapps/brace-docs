@@ -8,7 +8,7 @@ export function ProseContent(props) {
     <Component
       className={clsx(
         className,
-        'prose max-w-none dark:prose-invert text-gray-500 dark:text-gray-400',
+        'prose max-w-none text-gray-500 dark:prose-invert dark:text-gray-400',
         'prose-headings:scroll-mt-28',
         'focus:prose-a:outline-none focus-visible:prose-a:rounded focus-visible:prose-a:ring',
       )}

@@ -50,9 +50,9 @@ export function ThemeSelector(props) {
   return (
     <Listbox as="div" value={theme} onChange={setTheme} {...props}>
       <Label className="sr-only">Theme</Label>
-      <ListboxButton className="flex size-14 items-center justify-center focus:outline-none group" aria-label="Theme">
-        <div className="group size-8 rounded-full border border-gray-400 group-hover:border-gray-500 dark:border-gray-500 dark:group-hover:border-gray-400 flex items-center justify-center group-focus-visible:ring">
-          <LightIcon className="size-3.5 dark:hidden fill-gray-500 group-hover:fill-gray-600" />
+      <ListboxButton className="group flex size-14 items-center justify-center focus:outline-none" aria-label="Theme">
+        <div className="group flex size-8 items-center justify-center rounded-full border border-gray-400 group-hover:border-gray-500 group-focus-visible:ring dark:border-gray-500 dark:group-hover:border-gray-400">
+          <LightIcon className="size-3.5 fill-gray-500 group-hover:fill-gray-600 dark:hidden" />
           <DarkIcon className="hidden size-4 fill-gray-400 group-hover:fill-gray-300 dark:block" />
         </div>
       </ListboxButton>
@@ -71,7 +71,7 @@ export function ThemeSelector(props) {
           >
             {() => (
               <>
-                <div className="rounded-full bg-white p-1 shadow ring-1 ring-gray-900/5 dark:bg-gray-700 dark:ring-inset dark:ring-white/5 size-6 flex items-center justify-center">
+                <div className="flex size-6 items-center justify-center rounded-full bg-white p-1 shadow ring-1 ring-gray-900/5 dark:bg-gray-700 dark:ring-inset dark:ring-white/5">
                   <theme.icon className={clsx('fill-gray-400', theme.iconSize)} />
                 </div>
                 <div className="ml-3">{theme.name}</div>
