@@ -87,6 +87,7 @@ export function Navigation(props) {
                         ? 'font-semibold text-gray-600 before:bg-gray-400 dark:text-gray-300 dark:before:bg-gray-500'
                         : 'text-gray-500 before:hidden before:bg-gray-300 hover:text-gray-600 hover:before:block dark:text-gray-400 dark:before:bg-gray-600 dark:hover:text-gray-300',
                     )}
+                    prefetch={false}
                   >{info.name}</Link>
                 </li>
               ))}
