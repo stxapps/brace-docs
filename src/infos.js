@@ -27,7 +27,7 @@ const _navMenuInfos = [
   //cnmi('vs-pocket', 'vs.Pocket', GRP_CRS),
   //cnmi('vs-raindrop', 'vs.Raindrop', GRP_CRS),
   cnmi('bookmark-manager-101', 'Bookmark Manager', GRP_101),
-  //cnmi('read-later-app-101', 'Read later app', GRP_101),
+  cnmi('read-later-app-101', 'Read-later app', GRP_101),
   cnmi('faqs', 'FAQs', GRP_MISC),
   //cnmi('about', 'About', GRP_MISC),
 ];
