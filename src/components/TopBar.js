@@ -25,7 +25,7 @@ export function TopBar() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 flex h-14 flex-none flex-wrap items-center justify-between bg-white dark:bg-gray-900">
+    <div className="sticky top-0 z-50 flex h-14 flex-none flex-wrap items-center justify-between bg-white dark:bg-gray-900">
       <div className="flex lg:hidden">
         <MobileNavigation />
       </div>
@@ -56,6 +56,6 @@ export function TopBar() {
           <div className="absolute bottom-0 right-0 h-px w-16 bg-gradient-to-r from-gray-200 dark:from-gray-700" />
         </>
       )}
-    </header>
+    </div>
   );
 }

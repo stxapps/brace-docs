@@ -17,8 +17,8 @@ const _navMenuInfos = [
   cnmi('encryption', 'Encryption', GRP_FS),
   //cnmi('data-storage', 'Data Storage', GRP_FS),
   //sign up/in/out
-  //cnmi('save-a-link', 'Save a Link', GRP_FS),
-  //cnmi('organize-links', 'Organize Links', GRP_FS),
+  cnmi('save-a-link', 'Save a Link', GRP_FS),
+  cnmi('organize-links', 'Organize Links', GRP_FS),
   //link preview
   //cnmi('custom-a-link', 'Custom a Link', GRP_FS),
   //cnmi('pin-links', 'Pin Links', GRP_FS),

@@ -132,6 +132,97 @@ export const searchData = [
     ],
   },
   {
+    'path': '/save-a-link',
+    'title': 'Save a Link',
+    'sections': [
+      [
+        '',
+        '',
+        [
+          'There are several ways to save a link for your convenience. Just one or two clicks away to save any links on any of your devices.',
+        ],
+      ],
+      [
+        'Save at Brace.to',
+        'save-at-brace-to',
+        [
+          "Click the '+ add' button on our website.",
+        ],
+      ],
+      [
+        'Save in Address Bar',
+        'save-in-address-bar',
+        [
+          "Type 'brace.to' and '/' in front of any link in the web browser address bar.",
+        ],
+      ],
+      [
+        'Save with our Extension',
+        'save-with-our-extension',
+        [
+          'Install our Chrome or Firefox web browser extension and click on our extension icon next to the address bar.',
+        ],
+      ],
+      [
+        'Save via our Mobile App',
+        'save-via-our-mobile-app',
+        [
+          'Install our app from the Google Play or App Store on your device and share a link with it.',
+        ],
+      ],
+    ],
+  },
+  {
+    'path': '/organize-links',
+    'title': 'Organize Links',
+    'sections': [
+      [
+        '',
+        '',
+        [
+          'Organize your links by moving them to Archive, Trash, or any list (folder) you create. In Settings -> Lists, you can create and organize lists (folders), such as arranging or moving into another list as needed.',
+        ],
+      ],
+      [
+        'Move Links',
+        'move-links',
+        [
+          'There are two ways to move links:',
+          "You can move a link by clicking the link three-dot menu and choosing 'Archive', 'Remove', or 'Move to'.",
+          "To move multiple links simultaneously, click the 'Select' button in the top or bottom bar first. Select as many links as you want. Then, choose 'Archive', 'Remove', or 'Move to' in the top or bottom bar.",
+        ],
+      ],
+      [
+        'Create a New List',
+        'create-a-new-list',
+        [
+          'Please go to Settings -> Lists to create a new list. Type a name in the text box and choose the OK (check) button. Your new list will be appended to the bottom of the others.',
+        ],
+      ],
+      [
+        'Organize Lists',
+        'organize-lists',
+        [
+          'Also, in Settings -> Lists, you can',
+          'Edit a list name by clicking on the name.',
+          "Arrange a list name with the 'up' or 'down' button.",
+          "Move into another list with the 'Move to' button.",
+          "Delete a list name with the 'Delete' button.",
+          "Some buttons might be in the three-dot menu. Default lists — 'My List', 'Trash', and 'Archive' — can not be deleted. 'My list' is the default list when you save a link from the browser address bar, browser extension, or mobile app. Trash is for removed links only, and you can permanently delete them here.",
+        ],
+      ],
+      [
+        'Delete Links',
+        'delete-links',
+        [
+          'Removed links in Trash will be automatically permanently deleted after 45 days. You can permanently delete any link in Trash immediately by:',
+          "Click the 'Permanently delete' button under the note three-dot menu.",
+          "To permanently delete multiple removed links, click the 'Select' button in the top or bottom bar first. Select as many removed links as you want. Then, choose the 'Permanently delete' button in the top or bottom bar.",
+        ],
+      ],
+    ],
+  },
+  {
     'path': '/bookmark-manager-101',
     'title': 'Bookmark Manager',
     'sections': [

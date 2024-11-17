@@ -15,5 +15,4 @@ aws s3 sync out s3://brace-docs --exclude "_next/*" --exclude "nextImageExportOp
 #    aws s3 cp ${HTMLFILE} s3://brace-docs/$HTMLFILE_WITHOUT_EXT --content-type "text/html" --cache-control max-age=86400
 #  done)
 
-aws cloudfront create-invalidation --distribution-id EJSU0ILKB44LH --paths /index.html /index.txt
-#aws cloudfront create-invalidation --distribution-id EJSU0ILKB44LH --paths "/*"
+aws cloudfront create-invalidation --distribution-id EJSU0ILKB44LH --paths "/*"
