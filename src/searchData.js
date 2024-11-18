@@ -216,7 +216,7 @@ export const searchData = [
         'delete-links',
         [
           'Removed links in Trash will be automatically permanently deleted after 45 days. You can permanently delete any link in Trash immediately by:',
-          "Click the 'Permanently delete' button under the note three-dot menu.",
+          "Click the 'Permanently delete' button under the link three-dot menu.",
           "To permanently delete multiple removed links, click the 'Select' button in the top or bottom bar first. Select as many removed links as you want. Then, choose the 'Permanently delete' button in the top or bottom bar.",
         ],
       ],
