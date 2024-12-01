@@ -203,10 +203,10 @@ export const searchData = [
         'Organize Lists',
         'organize-lists',
         [
-          'Also, in Settings -> Lists, you can',
+          'Also, in Settings -> Lists, you can:',
           'Edit a list name by clicking on the name.',
           "Arrange a list name with the 'up' or 'down' button.",
-          "Move into another list with the 'Move to' button.",
+          "Move into another list with the 'Move to' button (creating nest lists or subfolders).",
           "Delete a list name with the 'Delete' button.",
           "Some buttons might be in the three-dot menu. Default lists — 'My List', 'Trash', and 'Archive' — can not be deleted. 'My list' is the default list when you save a link from the browser address bar, browser extension, or mobile app. Trash is for removed links only, and you can permanently delete them here.",
         ],
