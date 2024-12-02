@@ -15,7 +15,7 @@ const cnmi = (slug, name, grp, path = '') => {
 const _navMenuInfos = [
   cnmi('account', 'Account', GRP_FS),
   cnmi('encryption', 'Encryption', GRP_FS),
-  //cnmi('data-storage', 'Data Storage', GRP_FS),
+  cnmi('data-server', 'Data Server', GRP_FS),
   //sign up/in/out
   cnmi('save-a-link', 'Save a Link', GRP_FS),
   cnmi('organize-links', 'Organize Links', GRP_FS),
@@ -23,7 +23,9 @@ const _navMenuInfos = [
   //cnmi('custom-a-link', 'Custom a Link', GRP_FS),
   //cnmi('pin-links', 'Pin Links', GRP_FS),
   //cnmi('tag-links', 'Tag Links', GRP_FS),
-  //migration import, export, delete data
+  //cnmi('import-data', 'Import Data', GRP_FS),
+  //cnmi('export-data', 'Export Data', GRP_FS),
+  //delete all data
   //cnmi('vs-pocket', 'vs.Pocket', GRP_CRS),
   //cnmi('vs-raindrop', 'vs.Raindrop', GRP_CRS),
   cnmi('bookmark-manager-101', 'Bookmark Manager', GRP_101),

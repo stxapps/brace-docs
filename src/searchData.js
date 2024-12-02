@@ -132,6 +132,28 @@ export const searchData = [
     ],
   },
   {
+    'path': '/data-server',
+    'title': 'Data Server',
+    'sections': [
+      [
+        '',
+        '',
+        [
+          'Your data lives in a data server of your choice; only you, with your Secret Key, can change it.',
+          'You can choose where to store your data by using your Secret Key to record the location of your data server in the Stacks blockchain. Our apps will retrieve the information when you sign in and store your data on that specified server. You truly own your data as you can access, manage, and set permissions directly on your server. Only your Secret Key can change your information in the blockchain. No one can lock you out of your own data.',
+        ],
+      ],
+      [
+        'Stacks Data Server',
+        'stacks-data-server',
+        [
+          "Brace.to stores your data in a Stacks data server. You can specify which Stacks data server to store your data in. By default, your Stacks data server is at hub.stacksdrive.com, provided by STX Apps. You can also deploy your own Stacks data server. To change your Stacks data server, you must record your server's information on the Stacks blockchain using your Secret Key. Brace.to retrieves the information from the blockchain when you sign in and store your data on that specified server. For more details, please visit Stacks Gaia.",
+          'There has yet to be a user-friendly tool for deploying your own Stacks data server, managing its location on the Stacks blockchain, or directly handling files and setting permissions on the server. We plan to create a tool with these features and will update you on our progress.',
+        ],
+      ],
+    ],
+  },
+  {
     'path': '/save-a-link',
     'title': 'Save a Link',
     'sections': [
