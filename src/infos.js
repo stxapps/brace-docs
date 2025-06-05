@@ -16,19 +16,14 @@ const _navMenuInfos = [
   cnmi('account', 'Account', GRP_FS),
   cnmi('encryption', 'Encryption', GRP_FS),
   cnmi('data-server', 'Data Server', GRP_FS),
-  //sign up/in/out
   cnmi('save-a-link', 'Save a Link', GRP_FS),
   cnmi('organize-links', 'Organize Links', GRP_FS),
-  //link preview
-  //cnmi('custom-a-link', 'Custom a Link', GRP_FS),
-  //cnmi('pin-links', 'Pin Links', GRP_FS),
-  //cnmi('tag-links', 'Tag Links', GRP_FS),
+  cnmi('link-preview', 'Link Preview', GRP_FS),
   cnmi('import-export', 'Import & Export', GRP_FS),
   //cnmi('vs-raindrop', 'vs.Raindrop', GRP_CRS),
   cnmi('bookmark-manager-101', 'Bookmark Manager', GRP_101),
   cnmi('read-later-app-101', 'Read-later app', GRP_101),
   cnmi('faqs', 'FAQs', GRP_MISC),
-  //cnmi('about', 'About', GRP_MISC),
 ];
 for (const info of _navMenuInfos) {
   if (info.path.length === 0) info.path = '/' + info.slug;
