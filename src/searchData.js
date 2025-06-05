@@ -242,6 +242,40 @@ export const searchData = [
           "To permanently delete multiple removed links, click the 'Select' button in the top or bottom bar first. Select as many removed links as you want. Then, choose the 'Permanently delete' button in the top or bottom bar.",
         ],
       ],
+      [
+        'Delete All Data',
+        'delete-all-data',
+        [
+          'Please go to Settings -> Data -> Delete All Data to delete all your data, including but not limited to all your saved links in all lists, all your created lists, and all your settings. This will only remove all your data, not your account. You will still be able to sign in.',
+        ],
+      ],
+    ],
+  },
+  {
+    'path': '/import-export',
+    'title': 'Import & Export',
+    'sections': [
+      [
+        '',
+        '',
+        [
+          'You can import data from a text file and export all your data from the server to your device as a text file.',
+        ],
+      ],
+      [
+        'Import Data',
+        'import-data',
+        [
+          'Import data from a text file. The file can be a plain text file containing a list of links or a file exported from a read-it-later app, bookmark manager, or our website/app. Please go to Settings -> Data -> Import Data and choose a text file.',
+        ],
+      ],
+      [
+        'Export All Data',
+        'export-all-data',
+        [
+          'Export all your data from the server to your device as a text file. Please go to Settings -> Data -> Export All Data and choose the Export All My Data button.',
+        ],
+      ],
     ],
   },
   {
