@@ -238,9 +238,9 @@ export const searchData = [
         'pin-links',
         [
           'You can choose links to always stay on the top of the list, a.k.a. Pin to the top. There are two ways to do it:',
-          'On any link, please choose a three-dot button -> Pin to the top.',
-          "To pin multiple links to the top simultaneously, click the 'Select' button in the top or bottom bar first. Select as many links as you want. Then, choose More actions -> Pin to the top in the top or bottom bar.",
-          "To unpin links from the top, please take similar steps but choose 'Unpin' instead.",
+          "On any link, please choose a three-dot button -> 'Pin to the top'.",
+          "To pin multiple links to the top simultaneously, click the 'Select' button in the top or bottom bar first. Select as many links as you want. Then, choose 'More actions' -> 'Pin to the top' in the top or bottom bar.",
+          "To unpin links from the top, please take similar steps but choose 'Manage pin' -> 'Unpin' instead. You can also move a pinned link up or down under the 'Manage pin'.",
         ],
       ],
       [
@@ -249,8 +249,8 @@ export const searchData = [
         [
           'Each link can have multiple tags. Assigning a tag to a link enables you to list links with the same tag, providing an additional method to browse links, similar to lists and sublists.',
           'There are two ways to add or manage tags:',
-          'On any link, please choose a three-dot button -> Add tags or Manage tags.',
-          "To add or manage tags on multiple links simultaneously, click the 'Select' button in the top or bottom bar first. Select as many links as you want. Then, choose More actions -> Manage tags in the top or bottom bar.",
+          "On any link, please choose a three-dot button -> 'Add tags' or 'Manage tags'.",
+          "To add or manage tags on multiple links simultaneously, click the 'Select' button in the top or bottom bar first. Select as many links as you want. Then, choose 'More actions' -> 'Manage tags' in the top or bottom bar.",
         ],
       ],
       [
@@ -295,7 +295,7 @@ export const searchData = [
         'Custom Link Preview',
         'custom-link-preview',
         [
-          'You can also customize a link preview, changing its title and thumbnail image. On any link, please choose a three-dot button -> change.',
+          "You can also customize a link preview, changing its title and thumbnail image. On any link, please choose a three-dot button -> 'change'.",
         ],
       ],
     ],
@@ -670,7 +670,7 @@ export const searchData = [
           'Can I create new folders and subfolders or lists and nested lists?',
           'Yes, please go to Settings -> Lists. You can create a new list and move it into any list.',
           'Can I choose a card layout on my desktop and a list layout on my phone?',
-          'Yes, you can have a different layout on each device. To do so, go to Settings -> Misc. -> Layout View and select "Device" first.',
+          "Yes, you can have a different layout on each device. To do so, go to Settings -> Misc. -> Layout View and select 'Device' first.",
           'Does Brace.to have a dark mode/dark theme?',
           "Yes, we do. You can change the app's appearance in Settings -> Misc. Our dark is dark grey, not true black or AMOLED black.",
           'Can I share my lists?',
